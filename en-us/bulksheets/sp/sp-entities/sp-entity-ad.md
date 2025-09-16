@@ -1,0 +1,22 @@
+---
+title: Bulksheets legacy information
+description: Information about the legacy version of bulksheets.
+type: guide
+interface: bulk-operations
+---
+
+# Record Type: Ad
+
+Create or update your Ad by entering the following information in a bulksheet. 
+
+| S. No. | Field       | Description                                                                                                                                                                                                                                                              | Required Field                          | Value                                                                                                                             | Mutable |
+|--------|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------|---------|
+| 1      | Record ID   | Record ID should be left blank when creating the entity. Since the entity does not exist when creating it, no Record ID is available for the entity. When updating an entity, this is a required field. See your downloaded Bulksheet for available Record IDs.          | Required for updates only               | Blank – for create <br/> <br/> Record ID – for update                                                                                        | No      |
+| 2      | Record Type | Enter “Ad”                                                                                                                                                                                                                                                               | Required                                | “Ad”                                                                                                                              | No      |
+| 3      | Campaign ID | The ID of the campaign to which this keyword belongs. If the campaign associated with this Ad already exists, then add the Campaign ID from your downloaded Bulksheet here, or leave it blank if you are creating this Ad along with a Campaign that does not exist yet. | Required if the campaign already exists | Blank – If campaign doesn’t exist <br/> <br/> Campaign ID - If the campaign exists                                                           | No      |
+| 4      | Campaign    | The name of the campaign to which this Ad belongs (case sensitive).                                                                                                                                                                                                      | Required                                | If this Ad is being created for the campaign created above, enter the identical campaign name from the row above (case sensitive) | No      |
+| 5      | Ad Group    | The name of the Ad Group to which this Ad belongs (case sensitive).                                                                                                                                                                                                      | Required                                | Enter the identical Ad Group from the row above (case sensitive) if this Ad is being created for that Ad Group.                   | No      |
+| 6      | SKU/ASIN    | The SKU or ASIN for the listed product to be advertised. Sellers use SKU, while vendors use ASIN.                                                                                                                                                                        | Required                                | SKU or ASIN                                                                                                                       | No      |
+| 7      | Status      | Advertiser-specified state of the product ad.                                                                                                                                                                                                                            | Required                                | Enter “Enabled”, “Paused”, or “Archived”                                                                                         | Yes     |
+
+

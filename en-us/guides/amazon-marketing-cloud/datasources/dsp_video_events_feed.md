@@ -1,0 +1,40 @@
+---
+title: Amazon DSP video events table
+description: The Amazon DSP video events table
+type: guide
+interface: api
+---
+# Amazon DSP video events table
+
+**Analytics table:** 
+
+* `dsp_video_events_feed`
+
+**Audience table:** 
+
+* `dsp_video_events_feed_for_audiences`
+
+
+> [WARNING] Workflows that use these tables will time out when run over extended periods of time.
+
+This table has the exact same basic structure as [dsp_impressions](guides/amazon-marketing-cloud/datasources/dsp_impressions) table but in addition to that, the table provides video metrics for each of the video creative events triggered by the video player and associated with the impression event.
+
+The following table shows columns **in addition** to the ones listed for `dsp_impressions`.
+
+| Field                | Data type | Metric / dimension | Definition                                                                                                                                                                                                                                                                                                                               | Aggregation threshold |
+| -------------------- | --------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------- |
+| video\_click          | LONG      | Metric             | The number of Amazon DSP video clicks. Possible values for this field are: '1' (if the video was viewed to completion) or '0' (if the video was not viewed to completion). This field will always be '0' for non-video impressions.                                                                                                      | NONE                  |
+| video\_complete       | LONG      | Metric             | The number of Amazon DSP video impressions where the video was viewed to completion (100%). Possible values for this field are: '1' (if the video was viewed to completion) or '0' (if the video was not viewed to completion). This field will always be '0' for non-video impressions.                                                 | NONE                  |
+| video\_creative\_view  | LONG      | Metric             | The number of Amazon DSP video impressions where an additional ad element, such as the video companion ad or VPAID overlay, was viewed. Possible values for this field are: '1' (if the additional ad element was viewed) or '0' (if the additional ad element was not viewed). This field will always be '0' for non-video impressions. | NONE                  |
+| video\_first\_quartile | LONG      | Metric             | The number of Amazon DSP video impressions where the video was viewed to the first quartile (at least 25% completion). Possible values for this field are: '1' (if the video was viewed to at least 25% completion) or '0' (if the video was not viewed to 25% completion). This field will always be '0' for non-video impressions.     | NONE                  |
+| video\_impression     | LONG      | Metric             | The number of Amazon DSP video impressions where the first frame of the ad was shown. Possible values for this field are: '1' (if the first frame of the video was shown) or '0' (if the first frame of the video was not shown). This field will always be '0' for non-video impressions.                                               | NONE                  |
+| video\_midpoint       | LONG      | Metric             | The number of Amazon DSP video impressions where the video was viewed to the midpoint (at least 50% completion). Possible values for this field are: '1' (if the video was viewed to at least 50% completion) or '0' (if the video was not viewed to 50% completion). This field will always be '0' for non-video impressions.           | NONE                  |
+| video\_mute           | LONG      | Metric             | The number of Amazon DSP video mutes. Possible values for this field are: '1' (if the user muted the video) or '0' (if the user did not mute the video). This field will always be '0' for non-video impressions.                                                                                                                        | NONE                  |
+| video\_pause          | LONG      | Metric             | The number of Amazon DSP video pauses. Possible values for this field are: '1' (if the user paused the video) or '0' (if the user did not pause the video). This field will always be '0' for non-video impressions.                                                                                                                     | NONE                  |
+| video\_replay         | LONG      | Metric             | The number of Amazon DSP video impressions where the ad was replayed again after it completed. Possible values for this field are: 1 (if the user replayed the video after completion) or 0 (if the video was not replayed after completion). This field will always be '0' for non-video impressions.                                   | NONE                  |
+| video\_resume         | LONG      | Metric             | The number of Amazon DSP video impressions where the video was resumed after a pause. Possible values for this field are: 1 (if the video was resumed after a pause) or 0 (if the video was not resumed after a pause). This field will always be '0' for non-video impressions.                                                         | NONE                  |
+| video\_skip\_backward  | LONG      | Metric             | The number of Amazon DSP video impressions that had backward skips. Possible values for this field are: '1' (if the user skipped the video backward) or '0' (if the user did not skip the video backward). This field will always be '0' for non-video impressions.                                                                      | NONE                  |
+| video\_skip\_forward   | LONG      | Metric             | The number of Amazon DSP video impressions that had forward skips. Possible values for this field are: '1' (if the user skipped the video forward) or '0' (if the user did not skip the video forward). This field will always be '0' for non-video impressions.                                                                         | NONE                  |
+| video\_start          | LONG      | Metric             | The number of Amazon DSP video impression starts. Possible values for this field are: '1' (if the user started the video) or '0' (if the user did not start the video). This field will always be '0' for non-video impressions.                                                                                                         | NONE                  |
+| video\_third\_quartile | LONG      | Metric             | The number of Amazon DSP video impressions where the video was viewed to the third quartile (at least 75% completion). Possible values for this field are: '1' (if the video was viewed to at least 75% completion) or '0' (if the video was not viewed to 75% completion). This field will always be '0' for non-video impressions.     | NONE                  |
+| video\_unmute         | LONG      | Metric             | The number of Amazon DSP video unmutes. Possible values for this field are: '1' (if the video was unmuted) or '0' (if the video was not unmuted). This field will always be '0' for non-video impressions.                                                                                                                               | NONE                  |
